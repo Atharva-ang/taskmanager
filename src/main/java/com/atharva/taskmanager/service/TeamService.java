@@ -16,7 +16,7 @@ public class TeamService {
     private final TeamRepository teamRepository;
     private final UserRepository userRepository;
 
-    // 1. Create a new team AND add the creator to it securely
+    // 1. Create a new team from a new branch
     public Team createTeam(Team team, String userEmail) {
         User creator = userRepository.findByEmail(userEmail)
                 .orElseThrow(() -> new RuntimeException("User not found"));
