@@ -16,7 +16,10 @@ public class TeamService {
     private final TeamRepository teamRepository;
     private final UserRepository userRepository;
 
+
+
     // 1. Forcing a conflict in the master
+
     public Team createTeam(Team team, String userEmail) {
         User creator = userRepository.findByEmail(userEmail)
                 .orElseThrow(() -> new RuntimeException("User not found"));
